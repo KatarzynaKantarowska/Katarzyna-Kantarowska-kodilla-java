@@ -6,6 +6,21 @@ public class ForumPost {
     private String postBody;
     private String author;
 
+//    public ForumPost getPost(int postNumber) {
+//        if (postNumber >= 0 && postNumber < posts.size()) {
+//            return posts.get(postNumber);
+//        }
+//        return null;
+//    }
+//
+//    public ForumComment getComment(int commentNumber) {
+//        ForumComment theComment = null;
+//        if (commentNumber >= 0 && commentNumber < comments.size()) {
+//            theComment = comments.get(commentNumber);
+//        }
+//        return theComment;
+//    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
