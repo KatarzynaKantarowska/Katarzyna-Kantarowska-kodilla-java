@@ -1,6 +1,6 @@
 package forum;
 
-import com.kodilla.testing.SimpleUser;
+import com.kodilla.testing.forum.SimpleUser;
 import org.junit.jupiter.api.*;
 
 

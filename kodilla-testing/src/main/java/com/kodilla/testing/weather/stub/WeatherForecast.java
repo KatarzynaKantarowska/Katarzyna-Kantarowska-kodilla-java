@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class WeatherForecast {
-    private Temperatures temperatures;
+    private final Temperatures temperatures;
 
     public WeatherForecast(Temperatures temperatures) {
         this.temperatures = temperatures;

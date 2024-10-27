@@ -3,8 +3,8 @@ package com.kodilla.testing.forum.tdd;
 import java.util.Objects;
 
 public class ForumPost {
-    private String postBody;
-    private String author;
+    private final String postBody;
+    private final String author;
 
 
     @Override

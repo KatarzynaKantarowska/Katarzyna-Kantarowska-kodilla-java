@@ -15,14 +15,12 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class WeatherForecastTestSuite {
 
-    private static Temperatures temperaturesMock;
-
     private static WeatherForecast weatherForecast;
 
     @BeforeAll
     static void beforeAll() {
         //Given
-        temperaturesMock = Mockito.mock(Temperatures.class);
+        Temperatures temperaturesMock = Mockito.mock(Temperatures.class);
         TemperaturesStub temperaturesStub = new TemperaturesStub();
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesStub.getTemperatures());
         weatherForecast = new WeatherForecast(temperaturesMock);
