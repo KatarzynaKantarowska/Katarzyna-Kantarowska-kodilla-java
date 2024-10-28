@@ -1,19 +1,20 @@
 package com.kodilla.stream.immutable;
 
-public class Book {
+public final class Book {
     private final String title;
     private final String author;
     private final int yearOfPublication;
 
-    public Book(String title, String author, int yearOfPublication) {
+
+    public Book(String title, String author, int yearOfPublication, String signature) {
         this.title = title;
         this.author = author;
         this.yearOfPublication = yearOfPublication;
     }
+
     public String getTitle() {
         return title;
     }
-
     public String getAuthor() {
         return author;
     }
