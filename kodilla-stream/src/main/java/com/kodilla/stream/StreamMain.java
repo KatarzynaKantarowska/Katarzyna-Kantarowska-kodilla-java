@@ -6,7 +6,11 @@ import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.world.Continent;
+import com.kodilla.stream.world.Country;
+import com.kodilla.stream.world.World;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
@@ -56,5 +60,36 @@ public class StreamMain extends FunctionalCalculator {
                 .collect(Collectors.toMap(ForumUser::getId, u -> u));
 
         System.out.println("Filtered Forum Users Map: " + mapsOfUsers);
+
+        Country poland = new Country(new BigDecimal("40000000"));
+        Country czech = new Country(new BigDecimal("11000000"));
+        Country spain = new Country(new BigDecimal("49000000"));
+        Country germany = new Country(new BigDecimal("83000000"));
+        Country france = new Country(new BigDecimal("68000000"));
+
+        Continent europe = new Continent();
+        europe.addCountry(poland);
+        europe.addCountry(czech);
+        europe.addCountry(spain);
+        europe.addCountry(germany);
+        europe.addCountry(france);
+
+        Country china = new Country(new BigDecimal("1400000000"));
+        Country india = new Country(new BigDecimal("1400000000"));
+
+        Continent asia = new Continent();
+        asia.addCountry(china);
+        asia.addCountry(india);
+
+        World world = new World();
+        world.addContinent(asia);
+        world.addContinent(europe);
+
+        BigDecimal totalPopulation = world.getPeopleQuantity();
+        System.out.println("Total Population: " + totalPopulation);
+
+
+
+
     }
 }
