@@ -14,9 +14,12 @@ import com.kodilla.stream.world.World;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamMain extends FunctionalCalculator {
     public static void main(String[] args) {
@@ -42,11 +45,11 @@ public class StreamMain extends FunctionalCalculator {
 
         Forum forum = new Forum();
 
-        ForumUser forumUser1 = new ForumUser(1,"JohnSmith",'M', LocalDate.of(1980,11,19),3);
-        ForumUser forumUser2 = new ForumUser(2,"JessSmith",'F', LocalDate.of(1985,11,19),5);
-        ForumUser forumUser3 = new ForumUser(3,"JanSmit",'M', LocalDate.of(1999,11,19),8);
-        ForumUser forumUser4 = new ForumUser(4,"JohnSons",'M', LocalDate.of(2015,11,19),1);
-        ForumUser forumUser5 = new ForumUser(5,"Jesssss",'F', LocalDate.of(2016,11,19),0);
+        ForumUser forumUser1 = new ForumUser(1, "JohnSmith", 'M', LocalDate.of(1980, 11, 19), 3);
+        ForumUser forumUser2 = new ForumUser(2, "JessSmith", 'F', LocalDate.of(1985, 11, 19), 5);
+        ForumUser forumUser3 = new ForumUser(3, "JanSmit", 'M', LocalDate.of(1999, 11, 19), 8);
+        ForumUser forumUser4 = new ForumUser(4, "JohnSons", 'M', LocalDate.of(2015, 11, 19), 1);
+        ForumUser forumUser5 = new ForumUser(5, "Jesssss", 'F', LocalDate.of(2016, 11, 19), 0);
 
         forum.addUser(forumUser1);
         forum.addUser(forumUser2);
@@ -92,8 +95,6 @@ public class StreamMain extends FunctionalCalculator {
         int[] numbers = {2, 4, 6, 8, 10, 2, 4, 6, 8, 10, 2, 4, 6, 8, 10, 2, 4, 6, 8, 10, 2, 4, 6, 8, 10};
         double average = ArrayOperation.getAverage(numbers);
         System.out.println("Average: " + average);
-
-
 
     }
 }
