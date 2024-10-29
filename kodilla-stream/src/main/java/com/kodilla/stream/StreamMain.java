@@ -1,5 +1,6 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.array.ArrayOperation;
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.forumuser.Forum;
@@ -88,6 +89,9 @@ public class StreamMain extends FunctionalCalculator {
         BigDecimal totalPopulation = world.getPeopleQuantity();
         System.out.println("Total Population: " + totalPopulation);
 
+        int[] numbers = {2, 4, 6, 8, 10, 2, 4, 6, 8, 10, 2, 4, 6, 8, 10, 2, 4, 6, 8, 10, 2, 4, 6, 8, 10};
+        double average = ArrayOperation.getAverage(numbers);
+        System.out.println("Average: " + average);
 
 
 
