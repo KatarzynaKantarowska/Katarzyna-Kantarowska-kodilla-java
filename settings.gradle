@@ -16,3 +16,8 @@ include('kodilla-testing')
 include('kodilla-stream')
 
 include('kodilla-exception')
+
+include('kodilla-spring')
+
+include('kodilla-spring-intro')
+
