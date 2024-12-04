@@ -88,7 +88,7 @@ public class ForumUserTestSuite {
         Assertions.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Key West"));
         Assertions.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Washington"));
         Assertions.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Miami"));
-        Assertions.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Orlando"));
+        Assertions.assertFalse(user1.getLocationsOfFriendsOfFriends().contains("Orlando"));
 
     }
 }

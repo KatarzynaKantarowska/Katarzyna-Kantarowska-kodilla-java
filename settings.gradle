@@ -23,3 +23,10 @@ include('kodilla-spring-intro')
 
 include('kodilla-spring-web')
 
+include('kodilla-patterns')
+
+include('kodilla-jdbc')
+
+
+
+
