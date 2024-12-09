@@ -1,0 +1,36 @@
+CREATE TABLE ISSUESLISTS
+(
+ ID INT AUTO_INCREMENT PRIMARY KEY,
+ NAME VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE ISSUES
+(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ISSUESLIST_ID INT NOT NULL,
+    SUMMARY VARCHAR(255) NOT NULL,
+    DESCRIPTION TEXT,
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME) VALUES ('ToDo'), ('InProgress'),('Done');
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUES
+                                                                                 (1, 'Fix login issue', 'Resolve bug preventing login', 2),
+                                                                                 (1, 'Design homepage', 'Create initial design for the homepage', 3),
+                                                                                 (1, 'Set up database', 'Initialize database structure', 1),
+                                                                                 (1, 'Write tests', 'Write unit tests for user module', 4),
+                                                                                 (1, 'Plan sprint', 'Organize tasks for next sprint', 2),
+                                                                                 (2, 'Review code', 'Perform code review for last week''s PRs', 3),
+                                                                                 (2, 'Update documentation', 'Document API changes', 4),
+                                                                                 (2, 'Refactor module', 'Improve maintainability of the payment module', 2),
+                                                                                 (2, 'Optimize queries', 'Improve database query performance', 1),
+                                                                                 (2, 'Setup CI/CD', 'Configure continuous integration pipeline', 3),
+                                                                                 (3, 'Deploy release', 'Deploy version 1.0 to production', 1),
+                                                                                 (3, 'Monitor performance', 'Monitor server performance after deployment', 2),
+                                                                                 (3, 'Send release notes', 'Email release notes to stakeholders', 4),
+                                                                                 (3, 'Close tickets', 'Close resolved tickets in the system', 3),
+                                                                                 (3, 'Backup database', 'Create backup of production database', 1);
+COMMIT;
