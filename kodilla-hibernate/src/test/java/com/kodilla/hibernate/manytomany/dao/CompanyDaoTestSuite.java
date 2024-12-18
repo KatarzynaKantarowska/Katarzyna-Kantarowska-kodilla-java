@@ -7,11 +7,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 public class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany(){
@@ -50,12 +55,44 @@ public class CompanyDaoTestSuite {
         Assertions.assertNotEquals(0,dataMaestersId);
 
         //CleanUp
-        try {
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMaestersId);
-            companyDao.deleteById(greyMatterId);
-        } catch (Exception e) {
-            //do nothing
-        }
+        employeeDao.deleteAll();
+        companyDao.deleteAll();
+
+    }
+    @Test
+    void testFindEmployeeByLastName() {
+        //Given
+        Employee employee = new Employee("John", "Smith");
+        employeeDao.save(employee);
+
+        //When
+        List<Employee> result = employeeDao.findByLastName("Smith");
+
+        //Then
+        Assertions.assertEquals(1,result.size());
+        Assertions.assertEquals("Smith", result.get(0).getLastname());
+
+        //CleanUp
+        employeeDao.deleteAll();
+
+    }
+    @Test
+    void testFindCompanyByPrefix() {
+        //Given
+        Company company = new Company("Polomarket");
+        companyDao.save(company);
+        Company company2 = new Company("Lidl");
+        companyDao.save(company2);
+        Company company3 = new Company("Biedronka");
+        companyDao.save(company3);
+
+        //When
+        List<Company> companies = companyDao.findByNamePrefix("Pol");
+
+        //Then
+        Assertions.assertEquals(1,companies.size());
+        Assertions.assertEquals("Polomarket",companies.get(0).getName());
+        //CleanUp
+        companyDao.deleteAll();
     }
 }
