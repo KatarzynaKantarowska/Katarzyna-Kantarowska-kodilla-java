@@ -33,7 +33,7 @@ public class TaskDaoTestSuite {
         assertTrue(readTask.isPresent());
 
         //Cleanup
-        taskDao.deleteById(id);
+        taskDao.deleteAll();
     }
 
     @Test
@@ -51,8 +51,9 @@ public class TaskDaoTestSuite {
 
         //Cleanup
         int id = readTasks.get(0).getId();
-        taskDao.deleteById(id);
+        taskDao.deleteAll();
     }
+
     @Test
     void testTaskDaoSaveWithFinancialDetails() {
         //Given
@@ -67,6 +68,6 @@ public class TaskDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        //taskDao.deleteById(id);
+        taskDao.deleteAll();
     }
 }
