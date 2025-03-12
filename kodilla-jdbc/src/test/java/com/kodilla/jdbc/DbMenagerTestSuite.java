@@ -82,7 +82,7 @@ class DbMenagerTestSuite {
             userCounter++;
         }
         //Then
-        assertEquals(2, userCounter, "User has more than 2 posts");
+        assertEquals(2, userCounter);
         cleanupStatement = dbManager.getConnection().createStatement();
         cleanupStatement.executeUpdate("DELETE FROM POSTS");
         cleanupStatement.executeUpdate("DELETE FROM USERS");
