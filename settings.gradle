@@ -29,6 +29,8 @@ include('kodilla-jdbc')
 
 include('kodilla-hibernate')
 
+include('kodilla-testing2')
+
 
 
 
